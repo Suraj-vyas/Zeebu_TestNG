@@ -1,0 +1,123 @@
+# ====================
+# Maven
+# ====================
+# Compiled class files
+/target/
+
+# Maven-specific files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ====================
+# Java
+# ====================
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# ====================
+# IntelliJ IDEA
+# ====================
+# IntelliJ project files
+/.idea/
+/*.iml
+/*.iws
+/*.ipr
+
+# IntelliJ specific folders
+out/
+*.log
+
+# ====================
+# TestNG
+# ====================
+# TestNG reports
+/test-output/
+
+# ====================
+# Selenium
+# ====================
+# Selenium logs or reports (if any specific directories)
+/logs/
+/reports/
+
+# ====================
+# macOS Specific
+# ====================
+# macOS hidden files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ====================
+# Logs and Temporary Files
+# ====================
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# ====================
+# Environment Variables
+# ====================
+# Environment variable files
+.env
+
+# ====================
+# Sensitive Files
+# ====================
+# Configuration files with sensitive data
+/config.properties
+/credentials.properties
+
+# ====================
+# Others
+# ====================
+# Coverage reports
+coverage/
+*.lcov
+
+# Gradle files (if used alongside Maven)
+/.gradle/
+/build/
+
+# ====================
+# Optional: Node.js (if applicable)
+# ====================
+# If you have any Node.js components
+/node_modules/
+/npm-debug.log*
+/yarn-error.log*
+
