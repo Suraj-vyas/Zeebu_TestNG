@@ -28,6 +28,7 @@ public class SwapPage extends CommonPage{
     }
 
      public void isUserOnSwapPage(){
+        WebUI.waitForPageLoaded();
          WebUI.validatePage(SwapPage_Loc,"Swap Page");
      }
 

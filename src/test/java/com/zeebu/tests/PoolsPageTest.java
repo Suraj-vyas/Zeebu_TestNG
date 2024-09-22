@@ -17,6 +17,8 @@ public class PoolsPageTest extends Base {
     @FrameworkAnnotation(author = {AuthorType.Suraj}, category = {CategoryType.SANITY}, scenario = {TestScenarioType.POSITIVE})
     @Test(description = "Validating the Balancer Pools Page Title")
     public void TC01_Validate_Balancer_Pools_Page_Title(){
+        getPoolsPage().navigateToPoolsPage();
+        getPoolsPage().isUserOnPoolsPage();
         WebUI.validatePageTitle("Balancer DeFi Liquidity Pools");
     }
 
