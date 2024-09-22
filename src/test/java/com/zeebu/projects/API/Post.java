@@ -1,12 +1,13 @@
 package com.zeebu.projects.API;
 
+import com.zeebu.projects.UI.pages.CommonPage;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 
 import static com.zeebu.constants.FrameworkConstants.*;
 
-public class Post {
+public class Post extends CommonPage {
 
     public Response call_BalancerAPI_toFetch_OnePoolData(String chain, String poolId) {
         // Define the base URL
@@ -125,7 +126,7 @@ public class Post {
                 .post();
 
         // Print the response
-        System.out.println("Response: " + response.prettyPrint());
+//        System.out.println("Response: " + response.prettyPrint());
         return response;
     }
 
@@ -287,8 +288,10 @@ public class Post {
                 .post();
 
         // Print the response
-        System.out.println(response.prettyPrint());
+//        System.out.println(response.prettyPrint());
         return response;
 
     }
+
+//    public JSONPostRequestResponse
 }

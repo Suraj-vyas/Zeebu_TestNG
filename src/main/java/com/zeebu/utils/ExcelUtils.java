@@ -1,4 +1,5 @@
 package com.zeebu.utils;
+
 import org.apache.poi.ss.usermodel.*;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class ExcelUtils {
         int colCount = sheet.getRow(0).getLastCellNum();
         Object[][] data = new Object[rowCount - 1][colCount];
         Iterator<Row> rowIterator = sheet.iterator();
-        rowIterator.next(); // Skip header
+        rowIterator.next();
         int i = 0;
         while (rowIterator.hasNext()) {
             Row row = rowIterator.next();

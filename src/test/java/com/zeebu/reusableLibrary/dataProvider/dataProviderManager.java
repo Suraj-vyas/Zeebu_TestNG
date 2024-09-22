@@ -14,7 +14,7 @@ public class dataProviderManager {
     @DataProvider(name = "excelLoginData")
     public static Object[][] getExcelLoginData() throws IOException {
         String filePath = EXCEL_DATA_FILE_PATH;
-        String sheetName = "LoginData";
+        String sheetName = "loginData";
         return ExcelUtils.getExcelData(filePath, sheetName);
     }
 

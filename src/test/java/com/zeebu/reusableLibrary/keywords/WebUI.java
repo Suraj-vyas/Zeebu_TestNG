@@ -1,5 +1,6 @@
 package com.zeebu.reusableLibrary.keywords;
 
+import com.aventstack.extentreports.Status;
 import com.zeebu.driver.DriverFactory;
 import com.zeebu.reusableLibrary.utils.ExtentReportUtils;
 import static com.zeebu.constants.FrameworkConstants.*;
@@ -54,6 +55,20 @@ public class WebUI {
         ExtentReportUtils.info("Clicked the "+ElementName+" WebElement successfully");
     }
 
+    public static void clickElementUsingJS(By by, String ElementName){
+        WebElement webElement=DriverFactory.getDriver().findElement(by);
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
+        js.executeScript("arguments[0].click();", webElement);
+        ExtentReportUtils.info("Clicked the "+ElementName+" WebElement successfully");
+    }
+
+    public static void EnterInputToTextBox(By by, String Input, String Description){
+        WebElement webElement=DriverFactory.getDriver().findElement(by);
+        webElement.sendKeys(Input);
+        ExtentReportUtils.info(Input+" Successfully Entered to "+Description+" TextBox");
+        ExtentReportUtils.passWithScreenshot(Input+" Successfully Entered to "+Description+" TextBox");
+    }
+
     public static String getPageTitle() {
         String title = DriverFactory.getDriver().getTitle();
         ExtentReportUtils.info("Get Page Title: "+DriverFactory.getDriver().getTitle());
@@ -62,6 +77,14 @@ public class WebUI {
 
     public static void ScrollToWebElement(WebElement webElement){
         waitForPageLoaded();
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+        ExtentReportUtils.info("Scrolled to element");
+    }
+
+    public static void ScrollToWebElement(By by){
+        waitForPageLoaded();
+       WebElement webElement= DriverFactory.getDriver().findElement(by);
         JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true);", webElement);
         ExtentReportUtils.info("Scroll to element " + webElement);
@@ -76,8 +99,18 @@ public class WebUI {
 
     }
 
+    public static void WaitForTimeout(int timeoutinSecond) {
+        waitForPageLoaded();
+        try {
+            Thread.sleep(timeoutinSecond*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void validatePage(By by, String ElementName) {
         waitForPageLoaded();
+        WaitForTimeout(5);
         boolean flag = DriverFactory.getDriver().findElement(by).isDisplayed();
         if (flag)
             ExtentReportUtils.passWithScreenshot(ElementName+" is Validated Successfully");
@@ -87,6 +120,17 @@ public class WebUI {
         }
     }
 
+    public static String getAttribute(By by, String AttributeName){
+        String att=DriverFactory.getDriver().findElement(by).getAttribute(AttributeName);
+        ExtentReportUtils.log(AttributeName+" From WebElement Extracted Successfully", Status.INFO);
+        return att;
+    }
+
+    public static String getText(By by){
+        String text=DriverFactory.getDriver().findElement(by).getText();
+        ExtentReportUtils.log("Text From WebElement Is Extracted Successfully", Status.INFO);
+        return text;
+    }
 
     public static void validateWebElement(By by, String ElementName) {
         waitForPageLoaded();

@@ -14,7 +14,7 @@ public final class FrameworkConstants {
     public static final String PROJECT_PATH=System.getProperty("user.dir") + File.separator;
     public static final String EXCEL_DATA_FILE_PATH = ConfigReader.getProperty("EXCEL_DATA_FILE_PATH");
     public static final String JSON_DATA_FILE_PATH = ConfigReader.getProperty("JSON_DATA_FILE_PATH");
-    public static final String CSV_DATA_FILE_PATH = ConfigReader.getProperty("JSON_DATA_FILE_PATH");
+    public static final String CSV_DATA_FILE_PATH = ConfigReader.getProperty("CSV_DATA_FILE_PATH");
     public static final String BROWSER = ConfigReader.getProperty("BROWSER");
     public static final String REPORT_TITLE = ConfigReader.getProperty("REPORT_TITLE");
     public static final String EXTENT_REPORT_NAME = ConfigReader.getProperty("EXTENT_REPORT_NAME");

@@ -1,17 +1,35 @@
 [
   {
-    "username": "user1",
-    "password": "pass1",
-    "expectedTitle": "Dashboard"
+    "network": "MAINNET",
+    "PoolNetwork": "MAINNET"
   },
   {
-    "username": "user2",
-    "password": "pass2",
-    "expectedTitle": "Dashboard"
+    "network": "ARBITRUM",
+    "PoolNetwork": "ARBITRUM"
   },
   {
-    "username": "invalidUser",
-    "password": "wrongpass",
-    "expectedTitle": "Login Failed"
+    "network": "AVALANCHE",
+    "PoolNetwork": "AVALANCHE"
+  },
+  {
+    "network": "BASE"
+  },
+  {
+    "network": "FRAXTAL"
+  },
+  {
+    "network": "GNOSIS"
+  },
+  {
+    "network": "MODE"
+  },
+  {
+    "network": "OPTIMISM"
+  },
+  {
+    "network": "POLYGON"
+  },
+  {
+    "network": "ZKEVM"
   }
 ]

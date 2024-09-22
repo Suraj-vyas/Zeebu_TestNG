@@ -1,6 +1,14 @@
 package com.zeebu.projects.UI.pages;
 
+import com.zeebu.reusableLibrary.keywords.WebUI;
 import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class IndividualPoolPage extends CommonPage{
 
@@ -20,4 +28,69 @@ public class IndividualPoolPage extends CommonPage{
   private By poolTypesListOnTable_Loc = By.xpath("//p[@class='chakra-text css-qpgsy8']");
   private By poolNotFound_Loc = By.xpath("//p[text()='No pools found']");
   private By serachInput_Loc = By.xpath("//input[@id='search']");
+
+
+
+  public String gotoFirstPoolAndReturnID() {
+   String[] ID= WebUI.getAttribute(firstPool_loc,"href").split("/");
+   WebUI.clickElement(firstPool_loc,"First Pool");
+    return ID[ID.length-1];
+  }
+
+  public String gotoFirstPoolAndReturnPoolType() {
+    String poolType=WebUI.getText(poolTypesListOnTable_Loc);
+    WebUI.clickElement(firstPool_loc,"First Pool");
+    return poolType;
+  }
+
+  public void isUserOnPoolPage() {
+   WebUI.validateWebElement(poolStats_loc,"Pool Stats");
+   WebUI.validateWebElement(poolActivity_loc,"Pool Activity");
+   WebUI.validateWebElement(poolComposition_loc,"Pool composition");
+   WebUI.validateWebElement(poolAttributes_loc,"Pool Attributes");
+   WebUI.validateWebElement(poolContracts_loc,"Pool Contracts");
+  }
+
+  public void  validatePoolCreationDate(long unixTimestamp) {
+
+    // Convert to Instant
+    Instant instant = Instant.ofEpochSecond(unixTimestamp);
+
+    // Convert Instant to ZonedDateTime with system's default timezone
+    ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
+
+    // Define the desired date format
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
+
+    // Format the ZonedDateTime to a string
+    String formattedDate = dateTime.format(formatter);
+
+    // Output the result
+    System.out.println(formattedDate);
+
+   String UICreatedDate= WebUI.getText(poolCreationDate_loc);
+    Assert.assertEquals(UICreatedDate,formattedDate);
+
+  }
+
+  public void validatePoolType(String type) {
+    WebUI.WaitForTimeout(5);
+    String UIPoolType=WebUI.getText(poolType_loc);
+    if (type.equalsIgnoreCase("composable_stable"))
+      type = "stable";
+    Assert.assertEquals(UIPoolType.toLowerCase(),type.toLowerCase());
+  }
+
+  public void validatePoolAddress(String poolAddress) {
+    WebUI.ScrollToWebElement(poolAddress_loc);
+    String[] actualPoolAddressArr= WebUI.getAttribute(poolAddress_loc,"href").split("/");
+    String actualPoolAddress= actualPoolAddressArr[actualPoolAddressArr.length-1];
+    Assert.assertEquals(actualPoolAddress,poolAddress);
+  }
+
+  public void  validatePoolName(String poolName) {
+    WebUI.ScrollToWebElement(poolName_loc);
+    String actualPoolName= WebUI.getText(poolName_loc);
+    Assert.assertEquals(actualPoolName,poolName);
+  }
 }

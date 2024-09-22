@@ -6,10 +6,10 @@
     </listeners>
     <test name="Test">
         <classes>
-            <class name="com.zeebu.tests.SeleniumTest"/>
+            <class name="com.zeebu.tests.IndividualPoolPageTest"/>
             <class name="com.zeebu.tests.BalancerHomePageTest"/>
             <class name="com.zeebu.tests.PoolsPageTest"/>
-            <class name="com.zeebu.tests.sampleTest"/>
+            <class name="com.zeebu.tests.SwapPageTest"/>
         </classes>
     </test>
 </suite>
