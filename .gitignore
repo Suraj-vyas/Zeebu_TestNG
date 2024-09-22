@@ -76,6 +76,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+/allure-results
+/extentReport.html
+/.allure
 
 # ====================
 # Logs and Temporary Files
