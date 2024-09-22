@@ -1,6 +1,8 @@
 package com.zeebu.driver;
 
 import com.zeebu.utils.ConfigReader;
+import static com.zeebu.constants.FrameworkConstants.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
+
 
 import java.time.Duration;
 
@@ -77,7 +80,7 @@ public class DriverFactory {
      * Initialize the WebDriver based on the browser type from config.
      */
     public static void initDriver() {
-        String browserName = ConfigReader.getProperty("browser").toUpperCase();
+        String browserName = BROWSER.toUpperCase();
         BrowserType browser;
         try {
             browser = BrowserType.valueOf(browserName);

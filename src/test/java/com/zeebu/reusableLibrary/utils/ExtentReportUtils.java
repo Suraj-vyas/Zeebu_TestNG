@@ -1,9 +1,10 @@
-package com.zeebu.utils;
+package com.zeebu.reusableLibrary.utils;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.zeebu.common.Base;
+import com.zeebu.reusableLibrary.common.Base;
 import com.zeebu.driver.DriverFactory;
+import com.zeebu.utils.ScreenshotUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
@@ -34,6 +35,10 @@ public class ExtentReportUtils {
 
     public static void skip(String message) {
         Base.test.skip(message);
+    }
+
+    public static void error(String message) {
+        Base.test.error(message);
     }
 
     public static void passWithScreenshot(String message) {

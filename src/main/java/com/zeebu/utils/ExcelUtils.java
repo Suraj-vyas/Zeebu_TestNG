@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class ExcelUtils {
+
+    //Return the Excel data in 2D array
     public static Object[][] getExcelData(String filePath, String sheetName) throws IOException {
         FileInputStream fis = new FileInputStream(filePath);
         Workbook workbook = WorkbookFactory.create(fis);

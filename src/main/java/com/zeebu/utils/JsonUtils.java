@@ -10,13 +10,7 @@ import java.util.Map;
 
 public class JsonUtils {
 
-    /**
-     * Reads a JSON file from the resources folder and converts it into a List of Maps.
-     *
-     * @param fileName  The name of the JSON file (e.g., "testData.json").
-     * @return          A List of Maps representing the JSON data.
-     * @throws IOException If the file is not found or cannot be read.
-     */
+   //Reads a JSON file from the resources folder and converts it into a List of Maps.
     public static List<Map<String, Object>> getJsonData(String fileName) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         ClassLoader classLoader = JsonUtils.class.getClassLoader();
@@ -28,12 +22,7 @@ public class JsonUtils {
         return objectMapper.readValue(file, new TypeReference<List<Map<String, Object>>>(){});
     }
 
-    /**
-     * Converts List of Maps into Object[][] for TestNG DataProvider.
-     *
-     * @param list The list obtained from JSON.
-     * @return     Object[][] array for DataProvider.
-     */
+   //Converts List of Maps into Object[][] for TestNG DataProvider.
     public static Object[][] convertListToObjectArray(List<Map<String, Object>> list) {
         Object[][] data = new Object[list.size()][];
         for (int i = 0; i < list.size(); i++) {

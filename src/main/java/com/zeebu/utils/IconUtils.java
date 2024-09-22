@@ -10,6 +10,7 @@ public final class IconUtils {
         super();
     }
 
+    //Get the Browser Icon for Reporting
     public static String getBrowserIcon() {
         if (BrowserInfoUtils.getBrowserInfo().contains(Browser.CHROME.toString())) {
             return ICON_BROWSER_CHROME;
@@ -22,6 +23,7 @@ public final class IconUtils {
         }
     }
 
+    //Get the OS for Reporting
     public static String getOSIcon() {
 
         String operationSystem = BrowserInfoUtils.getOSInfo().toLowerCase();

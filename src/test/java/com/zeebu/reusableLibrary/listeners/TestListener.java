@@ -1,11 +1,11 @@
-package com.zeebu.listeners;
+package com.zeebu.reusableLibrary.listeners;
 
 import com.zeebu.utils.BrowserInfoUtils;
 import com.aventstack.extentreports.Status;
-import com.zeebu.utils.ExtentReportUtils;
+import com.zeebu.reusableLibrary.utils.ExtentReportUtils;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import com.zeebu.common.Base;
+import com.zeebu.reusableLibrary.common.Base;
 
 public class TestListener implements ITestListener {
 

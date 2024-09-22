@@ -1,7 +1,5 @@
 package com.zeebu.utils;
 
-import com.zeebu.constants.FrameworkConstants;
-
 import static com.zeebu.constants.FrameworkConstants.BROWSER;
 
 public final class BrowserInfoUtils {

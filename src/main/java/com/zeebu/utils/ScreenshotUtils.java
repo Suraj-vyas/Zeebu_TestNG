@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 public class ScreenshotUtils {
     private static final String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "/test-output/screenshots/";
 
+    //Take the Screenshot
     public static String takeScreenshot(WebDriver driver, String screenshotName) {
         // Create the screenshot directory if it doesn't exist
         try {
@@ -37,6 +38,7 @@ public class ScreenshotUtils {
         return destPath;
     }
 
+    //Take the Screenshot in base64 Format
     public static String takeScreenshotAsBase64(WebDriver driver, String screenshotName) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
     }

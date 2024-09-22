@@ -19,12 +19,7 @@ public class ConfigReader {
         }
     }
 
-    /**
-     * Retrieves the value of the specified property key.
-     *
-     * @param key The property key.
-     * @return The property value.
-     */
+    //Retrieves the value of the specified property key.
     public static String getProperty(String key) {
         String value = properties.getProperty(key);
         if (value != null) {
@@ -33,14 +28,8 @@ public class ConfigReader {
             throw new RuntimeException("Property " + key + " not found in config.properties");
         }
     }
-
-    /**
-     * Retrieves the value of the specified property key with a default value.
-     *
-     * @param key          The property key.
-     * @param defaultValue The default value if the key is not found.
-     * @return The property value or the default value.
-     */
+    
+    //Retrieves the value of the specified property key with a default value.
     public static String getProperty(String key, String defaultValue) {
         return properties.getProperty(key, defaultValue);
     }

@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CSVUtils {
+
+    //Retrieves the CSV Data
     public static Object[][] getCSVData(String filePath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         String line;

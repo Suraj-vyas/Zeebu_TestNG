@@ -9,17 +9,20 @@ public final class DateUtils {
         super();
     }
 
+    //Get the current date
     public static String getCurrentDate() {
         Date date = new Date();
         return date.toString().replace(":", "_").replace(" ", "_");
     }
 
+    //Get the current data and time
     public static String getCurrentDateTime() {
         Date now = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         return formatter.format(now);
     }
 
+    //Get the customized date and time
     public static String getCurrentDateTimeCustom(String separator_Character) {
         Date now = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
