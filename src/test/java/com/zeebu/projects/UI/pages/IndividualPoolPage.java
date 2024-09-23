@@ -52,25 +52,17 @@ public class IndividualPoolPage extends CommonPage{
   }
 
   public void  validatePoolCreationDate(long unixTimestamp) {
-
     // Convert to Instant
     Instant instant = Instant.ofEpochSecond(unixTimestamp);
-
     // Convert Instant to ZonedDateTime with system's default timezone
     ZonedDateTime dateTime = instant.atZone(ZoneId.systemDefault());
-
     // Define the desired date format
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-
     // Format the ZonedDateTime to a string
     String formattedDate = dateTime.format(formatter);
-
-    // Output the result
     System.out.println(formattedDate);
-
-   String UICreatedDate= WebUI.getText(poolCreationDate_loc);
+    String UICreatedDate= WebUI.getText(poolCreationDate_loc);
     Assert.assertEquals(UICreatedDate,formattedDate);
-
   }
 
   public void validatePoolType(String type) {

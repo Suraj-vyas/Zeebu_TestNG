@@ -73,6 +73,5 @@ public class SwapPage extends CommonPage{
         String ToToken=WebUI.getText(First_toToken_name_loc);
         String SwapAmount= WebUI.getAttribute(To_TxtBox_loc,"title");
         ExtentReportUtils.passWithScreenshot("For 1 "+FromToken+" You will get :"+SwapAmount+" "+ToToken);
-
     }
 }

@@ -29,36 +29,28 @@ public class DriverFactory {
         SAFARI
     }
 
-    /**
-     * Initialize the WebDriver based on the specified browser type.
-     *
-     * @param browser The type of browser to initialize.
-     */
+    //Browser Initilization
     public static void initDriver(BrowserType browser) {
         WebDriver webDriver;
 
         switch (browser) {
             case CHROME:
                 ChromeOptions chromeOptions = new ChromeOptions();
-                // Add any Chrome-specific options here
                 webDriver = new ChromeDriver(chromeOptions);
                 break;
 
             case FIREFOX:
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                // Add any Firefox-specific options here
                 webDriver = new FirefoxDriver(firefoxOptions);
                 break;
 
             case EDGE:
                 EdgeOptions edgeOptions = new EdgeOptions();
-                // Add any Edge-specific options here
                 webDriver = new EdgeDriver(edgeOptions);
                 break;
 
             case SAFARI:
                 SafariOptions safariOptions = new SafariOptions();
-                // Add any Safari-specific options here
                 webDriver = new SafariDriver(safariOptions);
                 break;
 
@@ -69,16 +61,14 @@ public class DriverFactory {
         // Maximize the browser window
         webDriver.manage().window().maximize();
 
-        // Set implicit wait using Duration (recommended in Selenium 4)
+        // Set implicit wait using Duration
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // Set the WebDriver instance to ThreadLocal
         driver.set(webDriver);
     }
 
-    /**
-     * Initialize the WebDriver based on the browser type from config.
-     */
+    //Initialize the WebDriver based on the browser type from config.
     public static void initDriver() {
         String browserName = BROWSER.toUpperCase();
         BrowserType browser;
@@ -90,18 +80,13 @@ public class DriverFactory {
         initDriver(browser);
     }
 
-    /**
-     * Get the current WebDriver instance.
-     *
-     * @return The WebDriver instance.
-     */
+
+    //Return the Driver Instance
     public static WebDriver getDriver() {
         return driver.get();
     }
 
-    /**
-     * Quit the WebDriver instance and remove it from ThreadLocal.
-     */
+    //Quit the WebDriver instance and remove it from ThreadLocal.
     public static void quitDriver() {
         if (driver.get() != null) {
             driver.get().quit();

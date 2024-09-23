@@ -51,5 +51,4 @@ public abstract class Base extends CommonPage {
     public void tearDownReport() {
         extent.flush();
     }
-
 }
